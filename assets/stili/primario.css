@@ -843,8 +843,8 @@ select {
 .mb-32 {
     margin-bottom: 8rem;
 }
-.mb-7 {
-    margin-bottom: 1.75rem;
+.mb-4 {
+    margin-bottom: 1rem;
 }
 .mb-0 {
     margin-bottom: 0px;
@@ -858,20 +858,23 @@ select {
 .mb-8 {
     margin-bottom: 2rem;
 }
-.mb-4 {
-    margin-bottom: 1rem;
-}
 .mt-2 {
     margin-top: 0.5rem;
 }
 .-mt-28 {
     margin-top: -7rem;
 }
+.mb-7 {
+    margin-bottom: 1.75rem;
+}
 .mr-2 {
     margin-right: 0.5rem;
 }
 .mt-1 {
     margin-top: 0.25rem;
+}
+.mt-4 {
+    margin-top: 1rem;
 }
 .-mt-\[80px\] {
     margin-top: -80px;
@@ -884,9 +887,6 @@ select {
 }
 .-mt-20 {
     margin-top: -5rem;
-}
-.mt-4 {
-    margin-top: 1rem;
 }
 .mt-8 {
     margin-top: 2rem;
@@ -912,8 +912,8 @@ select {
 .mb-10 {
     margin-bottom: 2.5rem;
 }
-.mb-36 {
-    margin-bottom: 9rem;
+.mb-16 {
+    margin-bottom: 4rem;
 }
 .-mb-12 {
     margin-bottom: -3rem;
@@ -923,9 +923,6 @@ select {
 }
 .mb-3 {
     margin-bottom: 0.75rem;
-}
-.mb-16 {
-    margin-bottom: 4rem;
 }
 .mb-24 {
     margin-bottom: 6rem;
@@ -1239,8 +1236,8 @@ select {
     padding-top: 0px;
     padding-bottom: 0px;
 }
-.pb-4 {
-    padding-bottom: 1rem;
+.pb-40 {
+    padding-bottom: 10rem;
 }
 .pr-8 {
     padding-right: 2rem;
@@ -1278,6 +1275,9 @@ select {
 .pb-0 {
     padding-bottom: 0px;
 }
+.pb-4 {
+    padding-bottom: 1rem;
+}
 .pr-2 {
     padding-right: 0.5rem;
 }
@@ -1313,6 +1313,10 @@ select {
 .text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+}
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
 }
 .text-5xl {
     font-size: 3rem;
@@ -1392,7 +1396,7 @@ select {
     --black: #0f172a;
     --dark: #1D1D1D;
     --text: #7E7F95;
-    --overlay: ##e0e7ff;
+    --overlay: #e0e7ff;
 }
 * {
     transition: all 0.3s ease-out;
@@ -1752,8 +1756,8 @@ a:hover .icon.prev-post {
     .md\:mt-4 {
         margin-top: 1rem;
     }
-    .md\:mb-24 {
-        margin-bottom: 6rem;
+    .md\:mb-12 {
+        margin-bottom: 3rem;
     }
     .md\:mb-32 {
         margin-bottom: 8rem;
@@ -1814,6 +1818,9 @@ a:hover .icon.prev-post {
         padding-left: 3rem;
         padding-right: 3rem;
     }
+    .md\:pb-24 {
+        padding-bottom: 6rem;
+    }
     .md\:pt-0 {
         padding-top: 0px;
     }
@@ -1822,9 +1829,6 @@ a:hover .icon.prev-post {
     }
     .md\:pb-0 {
         padding-bottom: 0px;
-    }
-    .md\:pb-24 {
-        padding-bottom: 6rem;
     }
     .md\:pr-0 {
         padding-right: 0px;
