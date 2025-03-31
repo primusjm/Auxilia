@@ -1,0 +1,8 @@
+[11:19:48 2025-03-03] FETCHING Version 2.39.5
+[11:19:48 2025-03-03] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.39.5/spicetify-2.39.5-darwin-arm64.tar.gz
+[11:19:55 2025-03-03] EXTRACTING /Users/primus/.spicetify/spicetify.tar.gz
+[11:19:55 2025-03-03] SETTING EXECUTABLE PERMISSIONS TO /Users/primus/.spicetify/spicetify
+[11:19:55 2025-03-03] REMOVING /Users/primus/.spicetify/spicetify.tar.gz
+[11:19:55 2025-03-03] spicetify path already set in /Users/primus/.zshrc, continuing...
+[11:19:55 2025-03-03] spicetify v2.39.5 was installed successfully to /Users/primus/.spicetify
+[11:19:55 2025-03-03] Run 'spicetify --help' to get started
