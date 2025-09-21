@@ -1359,14 +1359,25 @@ select {
 .\[container-type\:inline-size\] {
     container-type: inline-size;
 }
-:root {
+/* :root {
     --brand: #4f46e5;
     --light: #ffffff;
     --black: #0f172a;
     --dark: #1D1D1D;
     --text: #7E7F95;
     --overlay: #e0e7ff;
-}
+}  */
+:root {
+    --brand: #4f46e5;
+    --black: #1a1918;
+    --white: #ffffff;
+    --light: #fafafa;
+    --text: #7E7F95;
+    --overlay: #f2f3f3;
+    --bg-cream: #f2f3f3;
+    --bg-cream2: #ececec;
+    --grey: #90919d;
+  }
 * {
     transition: all 0.3s ease-out;
 }
@@ -1374,9 +1385,14 @@ html {
     font-size: 14px;
     overflow-x: hidden !important;
 }
-body,
-.bg-body {
+body {
     background: var(--light) !important;
+}
+.bg-card {
+    background: var(--white) !important;
+}
+.bg-cream {
+    background: var(--bg-cream) !important;
 }
 .text-color {
   color: var(--black);
@@ -1849,6 +1865,10 @@ a:hover .icon.prev-post {
     .lg\:rounded-r-\[2rem\] {
         border-top-right-radius: 2rem;
         border-bottom-right-radius: 2rem;
+    }
+    .lg\:rounded-l-\[calc\(1rem\+1px\)\] {
+        border-top-left-radius: calc(1rem + 1px);
+        border-bottom-left-radius: calc(1rem + 1px);
     }
     .lg\:rounded-l-\[1rem\] {
         border-top-left-radius: 1rem;
