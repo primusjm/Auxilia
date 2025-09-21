@@ -924,8 +924,8 @@ select {
 .mb-16 {
     margin-bottom: 4rem;
 }
-.mb-24 {
-    margin-bottom: 6rem;
+.mt-\[20px\] {
+    margin-top: 20px;
 }
 .block {
     display: block;
@@ -1137,15 +1137,6 @@ select {
     --tw-bg-opacity: 1;
     background-color: rgb(224 231 255 / var(--tw-bg-opacity));
 }
-.bg-cover {
-    background-size: cover;
-}
-.bg-center {
-    background-position: center;
-}
-.bg-no-repeat {
-    background-repeat: no-repeat;
-}
 .object-cover {
     -o-object-fit: cover;
        object-fit: cover;
@@ -1243,9 +1234,6 @@ select {
 }
 .pt-4 {
     padding-top: 1rem;
-}
-.pt-6 {
-    padding-top: 1.5rem;
 }
 .pb-32 {
     padding-bottom: 8rem;
@@ -1362,21 +1350,19 @@ select {
 /* :root {
     --brand: #4f46e5;
     --light: #ffffff;
-    --black: #0f172a;
+    --black: #1a1918;
     --dark: #1D1D1D;
     --text: #7E7F95;
     --overlay: #e0e7ff;
 }  */
 :root {
     --brand: #4f46e5;
+    --dark: #1f1f1f;
     --black: #1a1918;
     --white: #ffffff;
-    --light: #fafafa;
-    --text: #7E7F95;
-    --overlay: #f2f3f3;
+    /* --light: #fafafa; */
+    --light: #f4f4f4;
     --bg-cream: #f2f3f3;
-    --bg-cream2: #ececec;
-    --grey: #90919d;
   }
 * {
     transition: all 0.3s ease-out;
@@ -1395,7 +1381,7 @@ body {
     background: var(--bg-cream) !important;
 }
 .text-color {
-  color: var(--black);
+  color: var(--dark);
 }
 span {
     display: inline-block;
@@ -1733,6 +1719,10 @@ a:hover .icon.prev-post {
         margin-left: 12rem;
         margin-right: 12rem;
     }
+    .md\:mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
     .md\:-mt-16 {
         margin-top: -4rem;
     }
@@ -1744,6 +1734,9 @@ a:hover .icon.prev-post {
     }
     .md\:h-56 {
         height: 14rem;
+    }
+    .md\:h-\[500px\] {
+        height: 500px;
     }
     .md\:w-\[90\%\] {
         width: 90%;
@@ -1870,14 +1863,6 @@ a:hover .icon.prev-post {
         border-top-left-radius: calc(1rem + 1px);
         border-bottom-left-radius: calc(1rem + 1px);
     }
-    .lg\:rounded-l-\[1rem\] {
-        border-top-left-radius: 1rem;
-        border-bottom-left-radius: 1rem;
-    }
-    .lg\:rounded-r-\[1rem\] {
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-    }
     .lg\:pl-6 {
         padding-left: 1.5rem;
     }
@@ -1886,6 +1871,9 @@ a:hover .icon.prev-post {
     }
     .lg\:pb-2 {
         padding-bottom: 0.5rem;
+    }
+    .lg\:pt-\[10px\] {
+        padding-top: 10px;
     }
     .lg\:pr-7 {
         padding-right: 1.75rem;
