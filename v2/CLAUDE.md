@@ -1,0 +1,4 @@
+- Never edit the Option / exploration files (… Options.dc.html, Direction Explorations, Design System*, Homepage Bold, Mobile Preview) unless explicitly asked.
+- Case study pages are named "CS - Name.dc.html".
+- Tabbed (appendix-style) case studies like CS - CoopBank and CS - Britam: mandate cards use a white background (#FFFFFF, data-mandate-card; dark mode falls back to var(--paper)).
+- Related links: record case studies show prev/next in the Homepage record order; appendix case studies show other appendix case studies.

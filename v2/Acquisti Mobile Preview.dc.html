@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;}body{margin:0;background:#E9E8F2;font-family:'Outfit',sans-serif;color:#14130F;}a{color:#3B28FF;}a:hover{color:#14130F;}</style>
+</helmet>
+<section data-screen-label="Acquisti mobile" style="padding:48px;display:flex;flex-direction:column;gap:28px;">
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    <span style="font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#3B28FF;">Acquisti · Mobile</span>
+    <h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:400;font-size:34px;letter-spacing:-0.02em;">Site and privacy policy at 390px, full length</h1>
+    <p style="margin:0;font-size:15px;color:#57534E;">Each page is shown top to bottom, with the hero held at a 390 × 844 screen height.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;">
+    <div style="display:flex;flex-direction:column;gap:14px;flex:none;">
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;font-weight:500;">Acquisti</span>
+      <iframe ref="{{ homeRef }}" src="./Acquisti.dc.html" title="Acquisti on mobile" scrolling="no" style="display:block;width:390px;height:844px;border:0;background:#F4F4FA;box-shadow:0 0 0 1px rgba(20,19,15,.12),0 30px 60px -30px rgba(20,19,15,.35);"></iframe>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;flex:none;">
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;font-weight:500;">Privacy policy</span>
+      <iframe ref="{{ privRef }}" src="./Acquisti Privacy.dc.html" title="Acquisti privacy policy on mobile" scrolling="no" style="display:block;width:390px;height:844px;border:0;background:#F4F4FA;box-shadow:0 0 0 1px rgba(20,19,15,.12),0 30px 60px -30px rgba(20,19,15,.35);"></iframe>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  _frames = [];
+  _bind(f) {
+    if (!f || this._frames.includes(f)) return;
+    this._frames.push(f);
+    const run = () => setTimeout(() => this._fit(f), 1500);
+    f.addEventListener('load', run);
+    try { if (f.contentDocument && f.contentDocument.readyState === 'complete') run(); } catch (e) {}
+  }
+  _fit(f, tries = 0) {
+    let d; try { d = f.contentDocument; } catch (e) { return; }
+    if (!d || !d.body) return;
+    const H = 844;
+    // wait until the page has rendered its first screen at the 844px viewport
+    if (!d.querySelector('[data-screen-label]') && tries < 20) { setTimeout(() => this._fit(f, tries + 1), 300); return; }
+    if (f._fitted) return; f._fitted = true;
+    f.style.height = H + 'px';
+    const st = d.createElement('style');
+    st.textContent = 'html,body{overflow:hidden!important;}[data-hero-fit]{height:' + H + 'px!important;min-height:' + H + 'px!important;max-height:' + H + 'px!important;}';
+    d.head.appendChild(st);
+    d.querySelectorAll('body *').forEach(el => {
+      const cs = getComputedStyle(el); if (cs.position === 'fixed') return;
+      const h = el.offsetHeight;
+      if (h >= H * 0.85 && h <= H + 2) { el.style.setProperty('height', h + 'px', 'important'); el.style.setProperty('min-height', h + 'px', 'important'); el.style.setProperty('max-height', h + 'px', 'important'); }
+    });
+    let n = 0, last = 0;
+    const size = () => {
+      const h = Math.min(40000, Math.max(d.documentElement.scrollHeight, d.body.scrollHeight));
+      if (Math.abs(h - last) <= 2) return;
+      if (h > last && ++n > 40) return; // guard against any viewport-driven feedback loop
+      last = h; f.style.height = h + 'px';
+    };
+    size();
+    if (window.ResizeObserver) { const ro = new ResizeObserver(size); ro.observe(d.body); this._ros = (this._ros || []).concat(ro); }
+  }
+  componentWillUnmount() { (this._ros || []).forEach(r => r.disconnect()); }
+  renderVals() {
+    return { homeRef: (el) => this._bind(el), privRef: (el) => this._bind(el) };
+  }
+}
+</script>
+</body>
+</html>
